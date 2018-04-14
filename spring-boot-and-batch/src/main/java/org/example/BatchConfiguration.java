@@ -44,7 +44,7 @@ public class BatchConfiguration {
     /**
      * The second step of the job.
      * 
-     * @return the first job step.
+     * @return the second job step.
      */
     @Bean
     public Step secondStep() {
@@ -57,7 +57,7 @@ public class BatchConfiguration {
     }
 
     /**
-     * Sample job.
+     * Sample job which is composed of two steps.
      * 
      * @return the job to execute.
      */

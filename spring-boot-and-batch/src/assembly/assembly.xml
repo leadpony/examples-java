@@ -5,7 +5,6 @@
         <format>zip</format>
         <format>tar.gz</format>
     </formats>
-    <baseDirectory>sample</baseDirectory>
     <fileSets>
         <fileSet>
             <directory>src/main/scripts</directory>

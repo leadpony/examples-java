@@ -1,4 +1,4 @@
-# Spring Batch example
+# Spring Batch Example
 
 ## How to Build
 ```bash
@@ -11,6 +11,6 @@ $ mvn clean package
 ```bash
 $ cd target
 $ tar xzvf spring-boot-and-batch-1.0.0.tar.gz
-$ cd sample
+$ cd spring-boot-and-batch-1.0.0
 $ ./run.sh
 ```
