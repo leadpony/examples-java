@@ -10,10 +10,19 @@ import org.springframework.batch.repeat.RepeatStatus;
 public class SecondTasklet implements Tasklet {
 
     private static final Logger log = LoggerFactory.getLogger(SecondTasklet.class);
+    
+    private final int foo;
+    private final int bar;
+    
+    public SecondTasklet(int foo, int bar) {
+        this.foo = foo;
+        this.bar = bar;
+    }
 
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext context) throws Exception {
         log.debug("Message from the second task");
+        log.info("foo = " + foo + " and bar = " + bar);
         return RepeatStatus.FINISHED;
     }
 }

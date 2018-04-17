@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar lib/${project.build.finalName}.jar  %*
+java -jar lib/${project.build.finalName}.jar "$@"

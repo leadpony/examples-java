@@ -12,5 +12,5 @@ $ mvn clean package
 $ cd target
 $ tar xzvf spring-boot-and-batch-1.0.0.tar.gz
 $ cd spring-boot-and-batch-1.0.0
-$ ./run.sh
+$ ./run.sh --foo=100 --bar=200
 ```

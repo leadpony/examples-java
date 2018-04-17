@@ -10,6 +10,7 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -25,7 +26,12 @@ public class BatchConfiguration {
     
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
-
+    
+    @Value("${foo}")
+    private int foo;
+    @Value("${bar}")
+    private int bar;
+    
     /**
      * The first step of the job.
      * 
@@ -53,7 +59,7 @@ public class BatchConfiguration {
 
     @Bean
     public Tasklet secondTask() {
-        return new SecondTasklet();
+        return new SecondTasklet(this.foo, this.bar);
     }
 
     /**
