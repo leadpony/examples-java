@@ -11,7 +11,7 @@ public class Example {
     private void run() {
         int count = 0;
         for (int i = 0; i <= 0xffff; i++) {
-            if (!isUnstable(i)) {
+            if (isUnstable(i)) {
                 String hex = String.format("%04x", i);
                 System.out.print("'\\u" + hex + "', ");
                 if ((++count % 8) == 0) {
@@ -29,7 +29,7 @@ public class Example {
         String normalized = normalizer.normalize(original);
         String folded = UCharacter.foldCase(normalized, UCharacter.FOLD_CASE_DEFAULT);
         String result = normalizer.normalize(folded);
-        return original.equals(result);
+        return !original.equals(result);
     }
 
     @SuppressWarnings("unused")
@@ -38,7 +38,7 @@ public class Example {
         String normalized = Normalizer.normalize(original, Normalizer.Form.NFKC );
         String folded = normalized.toLowerCase(Locale.ENGLISH);
         String result = Normalizer.normalize(folded, Normalizer.Form.NFKC);
-        return original.equals(result);
+        return !original.equals(result);
     }
 
     public static void main(String[] args) {
