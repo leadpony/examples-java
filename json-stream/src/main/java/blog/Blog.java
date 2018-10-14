@@ -2,6 +2,9 @@ package blog;
 
 import java.util.List;
 
+/**
+ * Blog containing all posts.
+ */
 public class Blog {
 
     private final List<BlogPost> posts;
