@@ -38,7 +38,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>filter</artifactId>
             <version>${project.version}</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
+    
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
 
 </project>
